@@ -32,6 +32,16 @@
                                     <mainClass>hello.HelloWorld</mainClass>
                                 </transformer>
                             </transformers>
+                            <archive>
+                                <manifest>
+                                    <mainClass>
+                                        Hello World
+                                    </mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
                         </configuration>
                     </execution>
                 </executions>
