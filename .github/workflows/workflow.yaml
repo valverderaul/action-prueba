@@ -40,7 +40,7 @@ jobs:
           java-version: 11
       
       - run: mvn -B package --file pom.xml -DskipTests
-      - run: mkdir staging && cp  target/*jar-with-dependencies.jar staging
+      - run: mkdir staging && cp  target/*.jar staging
       
       - name: Upload artifact@v1
         uses: actions/upload-artifact@v1
