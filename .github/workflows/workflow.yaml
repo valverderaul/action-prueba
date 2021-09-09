@@ -40,11 +40,11 @@ jobs:
       - run: mvn -B package --file pom.xml -DskipTests
       - run: mkdir staging && cp  target/*jar-with-dependencies.jar staging
       
-      - name: Upload artifact@v1
-        uses: actions/upload-artifact@v1
-        with:
-          name: Package
-          path: Staging
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       
 
 
